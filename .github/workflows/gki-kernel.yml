@@ -494,7 +494,7 @@ jobs:
           # 如果你想使用北京时间应为:CURRENT_TIME="Sat Jun 07 14:29:29 CST 2025"
           CURRENT_TIME=$(date -u +"%a %b %d %H:%M:%S UTC %Y")
 
-          echo "CURRENT_TIME=$CURRENT_TIME"
+          echo "CURRENT_TIME="Tue Jan 31 05:44:42 UTC 2023""
           perl -pi -e "s{UTS_VERSION=\"\\\$\(echo \\\$UTS_VERSION \\\$CONFIG_FLAGS \\\$TIMESTAMP \\| cut -b -\\\$UTS_LEN\)\"}{UTS_VERSION=\"#1 SMP PREEMPT $CURRENT_TIME\"}" ./common/scripts/mkcompile_h
           if [ -f "build/build.sh" ]; then
             sed -i 's/-dirty//' ./common/scripts/setlocalversion
